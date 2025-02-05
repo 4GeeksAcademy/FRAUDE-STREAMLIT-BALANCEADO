@@ -48,7 +48,7 @@ if menu == "Predicción de Fraude":
         with col1:
             # Campos del formulario para la columna 1
             income = st.number_input("Ingresos", min_value=0.0, max_value=10000000.0, step=1000.0, value=1000.0)
-            name_email_similarity = st.slider("Similitud entre Nombre y Email", 0.0, 1.0, 0.01, value=0.5)
+            name_email_similarity = st.slider("Similitud entre Nombre y Email", 0.0, 1.0, 0.5, step=0.01)  # Cambié el valor predeterminado
             prev_address_months_count = st.number_input("Meses en Dirección Anterior", 0, 240, 1, value=12)
             current_address_months_count = st.number_input("Meses en Dirección Actual", 0, 240, 1, value=12)
             customer_age = st.number_input("Edad del Cliente", 18, 100, 1, value=30)  # valor predeterminado dentro del rango
@@ -68,8 +68,8 @@ if menu == "Predicción de Fraude":
             phone_home_valid = st.radio("¿Teléfono Casa Válido?", ["No", "Sí"], index=0)
             phone_mobile_valid = st.radio("¿Teléfono Móvil Válido?", ["No", "Sí"], index=0)
         
-        # Botón de envío
-        submit_button = st.form_submit_button("🚀 Predecir")
+        # Botón de envío dentro del formulario
+        submit_button = st.form_submit_button("🚀 Predecir")  # Asegúrate de que esté dentro del formulario
     
     if submit_button:  # Acción cuando se presiona el botón
         # Crear DataFrame con los datos de entrada
@@ -78,7 +78,7 @@ if menu == "Predicción de Fraude":
             velocity_6h, velocity_24h, bank_branch_count_8w, credit_risk_score, email_is_free == "Sí",
             phone_home_valid == "Sí", phone_mobile_valid == "Sí", has_other_cards == "Sí", proposed_credit_limit,
             foreign_request == "Sí", keep_alive_session, month
-        ]], columns=[
+        ]], columns=[ 
             'income', 'name_email_similarity', 'prev_address_months_count',
             'current_address_months_count', 'customer_age', 'velocity_6h',
             'velocity_24h', 'bank_branch_count_8w', 'credit_risk_score',
@@ -87,14 +87,31 @@ if menu == "Predicción de Fraude":
             'keep_alive_session', 'month'
         ])
         
-        # Realizar la predicción
-        prediction = str(model.predict(data_df)[0])
-        pred_class = class_dict[prediction]
-        st.success(f"🔮 **Predicción:** {pred_class}")
+        try:
+            # Realizar la predicción
+            prediction = str(model.predict(data_df)[0])
+            pred_class = class_dict[prediction]
+            st.success(f"🔮 **Predicción:** {pred_class}")
+        except Exception as e:
+            st.error(f"Error en la predicción: {str(e)}")
 
 elif menu == "Reseña sobre Fraudes Financieros":
     st.title("📖 Reseña sobre Fraudes Financieros")
-    st.markdown("""  # ... (contenido de la reseña) """)
+    st.markdown("""  
+    Los fraudes financieros son delitos que buscan engañar a individuos o empresas para obtener dinero de forma ilícita.
+    Estos pueden presentarse en múltiples formas como **phishing**, **fraude con tarjetas de crédito**, **estafas piramidales**,
+    entre otros.
+    
+    ### 📌 Cómo se Combate el Fraude Financiero:
+    - **Inteligencia Artificial y Machine Learning**: Identifica patrones sospechosos en tiempo real.
+    - **Autenticación de Múltiples Factores (MFA)**: Medidas de seguridad adicionales para evitar accesos no autorizados.
+    - **Educación Financiera**: Alertar a los usuarios sobre riesgos y estafas.
+    
+    ### 📈 Métodos de Machine Learning:
+    - **Modelos Supervisados:** Random Forest, XGBoost, Redes Neuronales.
+    - **Modelos No Supervisados:** Clustering, Isolation Forest.
+    - **Métodos Avanzados:** Redes Neuronales de Grafos (GNNs), LSTMs.
+    """)
     
     # Gráfico de fraudes por región
     st.subheader("📊 Distribución de Fraudes por Región")
