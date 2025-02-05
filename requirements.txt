@@ -4,4 +4,3 @@ requests
 scikit-learn
 streamlit
 joblib
-gzip
