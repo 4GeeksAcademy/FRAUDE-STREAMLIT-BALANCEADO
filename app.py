@@ -68,8 +68,8 @@ if menu == "Predicción de Fraude":
             phone_home_valid = st.radio("¿Teléfono Casa Válido?", ["No", "Sí"], index=0)
             phone_mobile_valid = st.radio("¿Teléfono Móvil Válido?", ["No", "Sí"], index=0)
         
-        # Botón de envío dentro del formulario
-        submit_button = st.form_submit_button("🚀 Predecir")  # Asegúrate de que esté dentro del formulario
+        # Asegurarse de que el botón de envío esté dentro del formulario
+        submit_button = st.form_submit_button("🚀 Predecir")  # Botón dentro del formulario
     
     if submit_button:  # Acción cuando se presiona el botón
         # Crear DataFrame con los datos de entrada
