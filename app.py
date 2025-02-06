@@ -28,6 +28,7 @@ except Exception as e:
     st.error(f"Error al cargar el modelo: {str(e)}")
     st.stop()
 
+# Verificar si el modelo es un RandomForestClassifier
 if not isinstance(model, RandomForestClassifier):
     st.error("El archivo cargado no es un modelo RandomForest.")
     st.stop()
@@ -55,7 +56,6 @@ if menu == "Predicción de Fraude":
             velocity_24h = st.number_input("Velocidad Transacción 24h", 0.0, 1000.0, 1.0, value=20.0)
             has_other_cards = st.radio("¿Tiene Otras Tarjetas?", ["No", "Sí"], index=0)
             foreign_request = st.radio("¿Solicitud Extranjera?", ["No", "Sí"], index=0)
-            intended_balcon_amount = st.number_input("Monto del Saldo Intencionado", min_value=0.0, max_value=1000000.0, step=1000.0, value=5000.0)
         
         with col2:
             proposed_credit_limit = st.number_input("Límite de Crédito Propuesto", 0.0, 1000000.0, 1000.0, value=5000.0)
@@ -66,8 +66,6 @@ if menu == "Predicción de Fraude":
             email_is_free = st.radio("¿Email Gratuito?", ["No", "Sí"], index=0)
             phone_home_valid = st.radio("¿Teléfono Casa Válido?", ["No", "Sí"], index=0)
             phone_mobile_valid = st.radio("¿Teléfono Móvil Válido?", ["No", "Sí"], index=0)
-            date_of_birth_distinct_emails_4w = st.number_input("Correos Electrónicos Distintos en 4 Semanas", min_value=0, max_value=10, step=1, value=2)
-            device_distinct_emails_8w = st.number_input("Emails Distintos en 8 Semanas", min_value=0, max_value=10, step=1, value=3)
         
         submit_button = st.form_submit_button("🚀 Predecir")  
 
@@ -76,16 +74,14 @@ if menu == "Predicción de Fraude":
             income, name_email_similarity, prev_address_months_count, current_address_months_count, customer_age,
             velocity_6h, velocity_24h, bank_branch_count_8w, credit_risk_score, email_is_free == "Sí",
             phone_home_valid == "Sí", phone_mobile_valid == "Sí", has_other_cards == "Sí", proposed_credit_limit,
-            foreign_request == "Sí", keep_alive_session, month,
-            date_of_birth_distinct_emails_4w, device_distinct_emails_8w, intended_balcon_amount
+            foreign_request == "Sí", keep_alive_session, month
         ]], columns=[
             'income', 'name_email_similarity', 'prev_address_months_count',
             'current_address_months_count', 'customer_age', 'velocity_6h',
             'velocity_24h', 'bank_branch_count_8w', 'credit_risk_score',
             'email_is_free', 'phone_home_valid', 'phone_mobile_valid',
             'has_other_cards', 'proposed_credit_limit', 'foreign_request',
-            'keep_alive_session', 'month', 'date_of_birth_distinct_emails_4w',
-            'device_distinct_emails_8w', 'intended_balcon_amount'
+            'keep_alive_session', 'month'
         ])
         
         try:
@@ -98,13 +94,24 @@ if menu == "Predicción de Fraude":
 elif menu == "Reseña sobre Fraudes Financieros":
     st.title("📖 Reseña sobre Fraudes Financieros")
     st.markdown("""  
-    Los fraudes financieros son delitos que buscan engañar a individuos o empresas para obtener dinero de forma ilícita.
-    Estos pueden presentarse en múltiples formas como **phishing**, **fraude con tarjetas de crédito**, **estafas piramidales**,
-    entre otros.
+    Los fraudes financieros buscan engañar a individuos o empresas para obtener dinero de forma ilícita.
     
     ### 📌 Cómo se Combate el Fraude Financiero:
-    - **Inteligencia Artificial y Machine Learning**: Identifica patrones sospechosos en tiempo real.
-    - **Autenticación de Múltiples Factores (MFA)**: Medidas de seguridad adicionales para evitar accesos no autorizados.
-    - **Educación Financiera**: Alertar a los usuarios sobre riesgos y estafas.
+    - **Machine Learning**: Identifica patrones sospechosos en tiempo real.
+    - **Autenticación de Múltiples Factores (MFA)**.
+    - **Educación Financiera**.
     
+    ### 📈 Métodos de Machine Learning:
+    - **Supervisados:** Random Forest, XGBoost.
+    - **No Supervisados:** Clustering, Isolation Forest.
     """)
+
+    st.subheader("📊 Distribución de Fraudes por Región")
+    regiones = ["Norteamérica", "Europa", "Latinoamérica", "Asia"]
+    fraudes = [3000, 2500, 1800, 2200]
+    
+    fig, ax = plt.subplots(figsize=(8, 4))
+    sns.barplot(x=regiones, y=fraudes, palette="viridis", ax=ax)
+    ax.set_xlabel("Región")
+    ax.set_ylabel("Casos de Fraude")
+    st.pyplot(fig)
