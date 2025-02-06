@@ -41,7 +41,10 @@ menu = st.sidebar.radio("📌 Menú de Navegación", ["Predicción de Fraude", "
 
 if menu == "Predicción de Fraude":
     st.title("🔍 Predicción de Fraude en Transacciones Bancarias")
-
+    
+    # Agregar créditos en el menú de predicción
+    st.markdown("**Aplicación de predicción creada por JEN UZHO y JORGE PEDROZA**")
+    
     with st.form("formulario_prediccion"):  
         st.subheader("📊 Ingrese los Datos de la Transacción")
         col1, col2 = st.columns(2)
