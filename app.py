@@ -142,4 +142,10 @@ elif menu == "Informaciòn sobre Fraudes Financieros?":
     # Gráfico de distribución de fraudes por región
     regiones = ["Norteamérica", "Europa", "Latinoamérica", "Asia"]
     fraudes = [3000, 2500, 1800, 2200]
+    fig, ax = plt.subplots(figsize=(8, 4))
+    sns.barplot(x=regiones, y=fraudes, palette="viridis", ax=ax)
+    ax.set_xlabel("Región")
+    ax.set_ylabel("Casos de Fraude")
+    st.pyplot(fig)
+
     
