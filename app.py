@@ -99,24 +99,40 @@ if menu == "Predicción de Fraude":
         except Exception as e:
             st.error(f"Error en la predicción: {str(e)}")
 
-elif menu == "Reseña sobre Fraudes Financieros":
-    st.title("📖 Reseña sobre Fraudes Financieros")
+elif menu == "Informaciòn sobre Fraudes Financieros?":
+    st.title("📖 Porque predecir sobre Fraudes Financieros?")
     st.markdown("""  
+    Los modelos de machine learning para la detección de fraudes financieros son fundamentales porque permiten detectar transacciones fraudulentas de manera rápida y eficiente, reduciendo pérdidas económicas y mejorando la seguridad.
     Los fraudes financieros son una amenaza constante para el sector bancario. Pero con nuestro modelo de predicción de fraude, tienes el poder de cambiar esta narrativa y proteger tus activos más valiosos.
 
     ### 🌟 ¿Por Qué Nuestro Modelo es Crucial?
     - **Precisión Inigualable:** Nuestro modelo de Random Forest es capaz de detectar patrones de fraude con una precisión del 97%, asegurando que las actividades fraudulentas sean detectadas antes de que puedan causar daño.
     - **Detección en Tiempo Real:** Capaz de analizar miles de transacciones por segundo, nuestro modelo permite intervenciones instantáneas para prevenir el fraude en el momento.
     - **Reducción de Falsos Positivos:** Al reducir las falsas alarmas en un 40%, tu equipo puede centrarse en las amenazas reales, mejorando la eficiencia y la productividad.
+    - **Adaptabilidad y Aprendizaje Continuo:** El fraude financiero evoluciona constantemente, por lo que los algoritmos de machine learning pueden actualizarse para identificar nuevas estrategias de fraude.
+    - **Ahorro en Costos y Recursos:** Automatizar la detección de fraude ayuda a reducir la carga de los analistas humanos, permitiéndoles centrarse en casos más complejos. 
 
     ### 🚀 Beneficios Esenciales:
     - **Protección Integral:** Salvaguarda la confianza y la satisfacción de tus clientes al proteger sus datos y activos.
     - **Cumplimiento Normativo Simplificado:** Facilita el cumplimiento de regulaciones internacionales contra el fraude y el lavado de dinero, reduciendo el riesgo de sanciones.
     - **Reputación Mejorada:** Implementar nuestra solución no solo te protege, sino que también refuerza tu reputación como una institución financiera de confianza y avanzada tecnológicamente.
-
+    - **Análisis en Tiempo Real:** Cualquier banco que use nuestro modelo puede bloquear una transacción fraudulenta en el momento en que ocurre, evitando cargos no autorizados.
+                
     ### 🔍 Casos de Éxito Demostrados:
-    - **Banco XYZ:** Al integrar nuestro modelo, Banco XYZ logró reducir las pérdidas por fraude en un 50% durante el primer semestre.
-    - **Institución ABC:** Con nuestra solución, Institución ABC aumentó su precisión en la detección de fraudes en un 35%, ahorrando millones en potenciales pérdidas.
+    - **PayPal: Reducción Drástica de Fraudes con Modelos Híbridos:*** 
+    🔹 Problema: PayPal procesaba millones de transacciones diarias y usaba reglas tradicionales, que generaban muchos falsos positivos y no detectaban fraudes sofisticados. 
+    🔹 Solución: Implementaron un sistema híbrido que combina Redes Neuronales y Modelos Basados en Árboles (XGBoost, Random Forest) para detectar anomalías en las transacciones.
+    🔹 Resultados:
+    ✅ Reducción del 50% en fraudes no detectados.
+    ✅ Disminución del 30% en falsos positivos, mejorando la experiencia del usuario.
+    ✅ Implementación de detección en tiempo real para evitar transacciones fraudulentas antes de que se completen.
+    
+    - **Mastercard y su Sistema Decision Intelligence:**
+    🔹 Problema: La empresa necesitaba mejorar la seguridad de pagos sin afectar la experiencia del cliente con bloqueos injustificados.
+    🔹 Solución: Crearon "Decision Intelligence", un sistema basado en ML que analiza comportamiento de clientes en tiempo real, considerando variables como ubicación, historial de compras y dispositivos utilizados.
+    🔹 Resultados:
+    ✅ Reducción del 50% en transacciones fraudulentas aprobadas.
+    ✅ Optimización del sistema de aprobación de pagos sin interrumpir compras legítimas.
 
     ### 📈 Distribución Global de Fraudes por Región
     Nuestro análisis global muestra cómo el fraude afecta a diferentes regiones, subrayando la necesidad urgente de soluciones avanzadas como la nuestra:
