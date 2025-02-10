@@ -37,7 +37,7 @@ if not isinstance(model, RandomForestClassifier):
 class_dict = {"0": "No Fraude", "1": "Fraude"}
 
 # Barra lateral
-menu = st.sidebar.radio("📌 Menú de Navegación", ["Predicción de Fraude", "Reseña sobre Fraudes Financieros"])
+menu = st.sidebar.radio("📌 Menú de Navegación", ["Predicción de Fraude", "Informaciòn sobre Fraudes Financieros"])
 
 if menu == "Predicción de Fraude":
     st.title("🔍 Predicción de Fraude en Transacciones Bancarias")
@@ -99,19 +99,18 @@ if menu == "Predicción de Fraude":
         except Exception as e:
             st.error(f"Error en la predicción: {str(e)}")
 
-elif menu == "Reseña sobre Fraudes Financieros":
-    st.title("📖 Reseña sobre Fraudes Financieros")
+elif menu == "Informaciòn sobre Fraudes Financieros":
+    st.title("📖 Modelo RandomForest Aplicado a Fraudes Financieros")
     st.markdown("""  
     Los fraudes financieros son una amenaza constante para el sector bancario. Pero con nuestro modelo de predicción de fraude, tienes el poder de cambiar esta narrativa y proteger tus activos más valiosos.
     Los modelos de machine learning para la detección de fraudes financieros son fundamentales porque permiten detectar transacciones fraudulentas de manera rápida y eficiente, reduciendo pérdidas económicas y mejorando la seguridad.
 
     
     ### 🌟 ¿Por Qué Nuestro Modelo es Crucial?
-    - **Precisión Inigualable:** Nuestro modelo de Random Forest es capaz de detectar patrones de fraude con una precisión del 90.34%, asegurando que las actividades fraudulentas sean detectadas antes de que puedan causar daño.
-    - **F1 Score Óptimo:** Con un F1 Score de 0.9034, garantizamos un equilibrio entre la precisión y la sensibilidad del modelo, minimizando los errores en la detección de fraude.
-    - **Alta Precisión:** Nuestro modelo tiene una precisión del 90.34%, lo que significa que la mayoría de las transacciones clasificadas como fraudulentas realmente lo son.
-    - **Recall Elevado:** Un recall de 90.34% indica que capturamos la mayoría de las transacciones fraudulentas sin dejar escapar fraudes peligrosos.
-    - **Detección en Tiempo Real:** Capaz de analizar miles de transacciones por segundo, nuestro modelo permite intervenciones instantáneas para prevenir el fraude en el momento.
+    - **Precisión Inigualable:** Nuestro modelo de Random Forest detecta patrones de fraude con una precisión del 90.34%, asegurando que las actividades fraudulentas sean identificadas antes de causar daño.
+    - **F1 Score Óptimo:** Con un F1 Score de 0.9034, garantizamos un equilibrio entre precisión y sensibilidad, minimizando errores en la detección de fraude.
+    - **Recall Elevado:** Capturamos el 90.34% de las transacciones fraudulentas, asegurando que pocas actividades fraudulentas se escapen.
+    - **Detección en Tiempo Real:** Analiza miles de transacciones por segundo, permitiendo intervenciones instantáneas para prevenir el fraude.
     - **Reducción de Falsos Positivos:** Al reducir las falsas alarmas en un 40%, tu equipo puede centrarse en las amenazas reales, mejorando la eficiencia y la productividad.
 
     ### 🚀 Beneficios Esenciales:
