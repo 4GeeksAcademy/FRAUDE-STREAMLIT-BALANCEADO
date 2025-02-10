@@ -100,7 +100,7 @@ if menu == "Predicción de Fraude":
             st.error(f"Error en la predicción: {str(e)}")
 
 elif menu == "Informaciòn sobre Fraudes Financieros":
-    st.title("📖 Reseña sobre Fraudes Financieros")
+    st.title("📖 Modelo RandomForest Para Detecciòn De Fraudes Financieros")
     st.markdown("""  
     Los fraudes financieros son una amenaza constante para el sector bancario. Pero con nuestro modelo de predicción de fraude, tienes el poder de cambiar esta narrativa y proteger tus activos más valiosos.
     Los modelos de machine learning para la detección de fraudes financieros son fundamentales porque permiten detectar transacciones fraudulentas de manera rápida y eficiente, reduciendo pérdidas económicas y mejorando la seguridad.
@@ -127,7 +127,6 @@ elif menu == "Informaciòn sobre Fraudes Financieros":
     - **Amazon: Protección Contra Fraudes en Compras Online:** Problema: Amazon tenía pérdidas millonarias debido a fraudes en pagos, cuentas falsas y devoluciones fraudulentas. Solución: Implementaron modelos de Machine Learning basados en Redes Neuronales Recurrentes (RNNs) y Gradient Boosting Machines (GBM) para detectar transacciones sospechosas. Resultados: Reducción del 35% en fraudes por devoluciones falsas. Automatización del 80% de los casos de fraude, reduciendo costos en equipos de revisión manual. 
                 
     ### 📈 Distribución Global de Fraudes por Región
-    Nuestro análisis global muestra cómo el fraude afecta a diferentes regiones, subrayando la necesidad urgente de soluciones avanzadas como la nuestra:
     """)
 
     # Gráfico de distribución de fraudes por región
@@ -136,3 +135,9 @@ elif menu == "Informaciòn sobre Fraudes Financieros":
     
     # Gráfico de barras
     fig, ax = plt.subplots(figsize=(8, 4))
+    ax.bar(regiones, fraudes, color=['blue', 'green', 'red', 'purple'])
+    ax.set_ylabel("Cantidad de Fraudes")
+    ax.set_title("Distribución de Fraudes por Región")
+
+    # Mostrar el gráfico en Streamlit
+    st.pyplot(fig)
