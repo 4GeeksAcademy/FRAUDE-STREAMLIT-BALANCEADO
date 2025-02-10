@@ -39,10 +39,11 @@ class_dict = {"0": "No Fraude", "1": "Fraude"}
 # Barra lateral
 menu = st.sidebar.radio("📌 Menú de Navegación", ["Predicción de Fraude", "Reseña sobre Fraudes Financieros"])
 
+# Mostrar el valor del menu seleccionado para depuración
+st.write(f"Menú seleccionado: {menu}")
+
 if menu == "Predicción de Fraude":
     st.title("🔍 Predicción de Fraude en Transacciones Bancarias")
-    
-    # Agregar créditos en el menú de predicción
     st.markdown("**Aplicación de predicción creada por JEN UZHO y JORGE PEDROZA**")
     
     with st.form("formulario_prediccion"):  
