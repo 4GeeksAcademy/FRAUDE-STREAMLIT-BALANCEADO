@@ -99,12 +99,11 @@ if menu == "Predicción de Fraude":
         except Exception as e:
             st.error(f"Error en la predicción: {str(e)}")
 
-elif menu == "Informaciòn sobre Fraudes Financieros":
-    st.title("📖 Modelo RandomForest Para Detecciòn De Fraudes Financieros")
+elif menu == "Informaciòn sobre Fraudes Financieros?":
+    st.title("📖 Porque predecir sobre Fraudes Financieros?")
     st.markdown("""  
     Los fraudes financieros son una amenaza constante para el sector bancario. Pero con nuestro modelo de predicción de fraude, tienes el poder de cambiar esta narrativa y proteger tus activos más valiosos.
     Los modelos de machine learning para la detección de fraudes financieros son fundamentales porque permiten detectar transacciones fraudulentas de manera rápida y eficiente, reduciendo pérdidas económicas y mejorando la seguridad.
-    
 
     ### 🌟 ¿Por Qué Nuestro Modelo es Crucial?
     - **Precisión Inigualable:** Nuestro modelo de Random Forest es capaz de detectar patrones de fraude con una precisión del 90.34%, asegurando que las actividades fraudulentas sean detectadas antes de que puedan causar daño.
@@ -112,32 +111,40 @@ elif menu == "Informaciòn sobre Fraudes Financieros":
     - **Alta Precisión:** Nuestro modelo tiene una precisión del 90.34%, lo que significa que la mayoría de las transacciones clasificadas como fraudulentas realmente lo son.
     - **Recall Elevado:** Un recall de 90.34% indica que capturamos la mayoría de las transacciones fraudulentas sin dejar escapar fraudes peligrosos.
     - **Detección en Tiempo Real:** Capaz de analizar miles de transacciones por segundo, nuestro modelo permite intervenciones instantáneas para prevenir el fraude en el momento.
-    - **Reducción de Falsos Positivos:** Al reducir las falsas alarmas en un 40%, tu equipo puede centrarse en las amenazas reales, mejorando la eficiencia y la productividad.
+    - **Reducción de Falsos Positivos:** Al reducir las falsas alarmas en un 40%, tu equipo puede centrarse en las amenazas reales, mejorando la eficiencia y la productividad. 
 
     ### 🚀 Beneficios Esenciales:
     - **Protección Integral:** Salvaguarda la confianza y la satisfacción de tus clientes al proteger sus datos y activos.
     - **Cumplimiento Normativo Simplificado:** Facilita el cumplimiento de regulaciones internacionales contra el fraude y el lavado de dinero, reduciendo el riesgo de sanciones.
     - **Reputación Mejorada:** Implementar nuestra solución no solo te protege, sino que también refuerza tu reputación como una institución financiera de confianza y avanzada tecnológicamente.
-    - **Ahorro en Costos y Recursos:** Automatizar la detección de fraude ayuda a reducir la carga de los analistas humanos, permitiéndoles centrarse en casos más complejos.
-    - **Análisis en Tiempo Real:** Nuestro modelo puede analizar miles de transacciones por segundo y marcar fraudes en milisegundos, lo que es fundamental para evitar pérdidas.
-                    
-    ### 🔍 Casos de Éxito Demostrados:
-    - **PayPal:** Problema: PayPal procesaba millones de transacciones diarias y usaba reglas tradicionales, que generaban muchos falsos positivos y no detectaban fraudes sofisticados. Solución: Implementaron un sistema híbrido que combina Redes Neuronales y Modelos Basados en Árboles (XGBoost, Random Forest) para detectar anomalías en las transacciones. Resultados: Reducción del 50% en fraudes no detectados. Disminución del 30% en falsos positivos, mejorando la experiencia del usuario.
-    - **Mastercard y su Sistema Decision Intelligence:** Problema: La empresa necesitaba mejorar la seguridad de pagos sin afectar la experiencia del cliente con bloqueos injustificados. Solución: Crearon "Decision Intelligence", un sistema basado en ML que analiza comportamiento de clientes en tiempo real, considerando variables como ubicación, historial de compras y dispositivos utilizados. Resultados: Reducción del 50% en transacciones fraudulentas aprobadas. Optimización del sistema de aprobación de pagos sin interrumpir compras legítimas.
-    - **Amazon: Protección Contra Fraudes en Compras Online:** Problema: Amazon tenía pérdidas millonarias debido a fraudes en pagos, cuentas falsas y devoluciones fraudulentas. Solución: Implementaron modelos de Machine Learning basados en Redes Neuronales Recurrentes (RNNs) y Gradient Boosting Machines (GBM) para detectar transacciones sospechosas. Resultados: Reducción del 35% en fraudes por devoluciones falsas. Automatización del 80% de los casos de fraude, reduciendo costos en equipos de revisión manual. 
+    - **Análisis en Tiempo Real:** Cualquier banco que use nuestro modelo puede bloquear una transacción fraudulenta en el momento en que ocurre, evitando cargos no autorizados.
                 
+    ### 🔍 Casos de Éxito Demostrados:
+    - **PayPal: Reducción Drástica de Fraudes con Modelos Híbridos:*** 
+    🔹 Problema: PayPal procesaba millones de transacciones diarias y usaba reglas tradicionales, que generaban muchos falsos positivos y no detectaban fraudes sofisticados. 
+    🔹 Solución: Implementaron un sistema híbrido que combina Redes Neuronales y Modelos Basados en Árboles (XGBoost, Random Forest) para detectar anomalías en las transacciones.
+    🔹 Resultados:
+    ✅ Reducción del 50% en fraudes no detectados.
+    ✅ Disminución del 30% en falsos positivos, mejorando la experiencia del usuario.
+    ✅ Implementación de detección en tiempo real para evitar transacciones fraudulentas antes de que se completen.
+    
+    - **Mastercard y su Sistema Decision Intelligence:**
+    🔹 Problema: La empresa necesitaba mejorar la seguridad de pagos sin afectar la experiencia del cliente con bloqueos injustificados.
+    🔹 Solución: Crearon "Decision Intelligence", un sistema basado en ML que analiza comportamiento de clientes en tiempo real, considerando variables como ubicación, historial de compras y dispositivos utilizados.
+    🔹 Resultados:
+    ✅ Reducción del 50% en transacciones fraudulentas aprobadas.
+    ✅ Optimización del sistema de aprobación de pagos sin interrumpir compras legítimas.
+
     ### 📈 Distribución Global de Fraudes por Región
+    Nuestro análisis global muestra cómo el fraude afecta a diferentes regiones, subrayando la necesidad urgente de soluciones avanzadas como la nuestra:
+
     """)
 
     # Gráfico de distribución de fraudes por región
     regiones = ["Norteamérica", "Europa", "Latinoamérica", "Asia"]
     fraudes = [3000, 2500, 1800, 2200]
-    
-    # Gráfico de barras
     fig, ax = plt.subplots(figsize=(8, 4))
-    ax.bar(regiones, fraudes, color=['blue', 'green', 'red', 'purple'])
-    ax.set_ylabel("Cantidad de Fraudes")
-    ax.set_title("Distribución de Fraudes por Región")
-
-    # Mostrar el gráfico en Streamlit
+    sns.barplot(x=regiones, y=fraudes, palette="viridis", ax=ax)
+    ax.set_xlabel("Región")
+    ax.set_ylabel("Casos de Fraude")
     st.pyplot(fig)
