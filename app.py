@@ -52,14 +52,14 @@ if menu == "Predicción de Fraude":
         # Primera columna con las primeras 10 variables
         with col1:
             income = st.number_input("Ingresos", min_value=0.0, max_value=10000000.0, step=1000.0, value=1000.0)
-            name_email_similarity = st.slider("Similitud entre Nombre y Email", 0.0, 1.0, 0.5, step=0.01)
-            prev_address_months_count = st.number_input("Meses en Dirección Anterior", min_value=0, max_value=240, value=12)
+            name_email_similarity = st.slider("Similitud entre Nombre y Email", 0.0, 1.0, 0.5, step=0.001)
+            prev_address_months_count = st.number_input("Meses en Dirección Anterior", min_value=-1, max_value=240, value=12)
             current_address_months_count = st.number_input("Meses en Dirección Actual", min_value=0, max_value=240, value=12)
             customer_age = st.number_input("Edad del Cliente", min_value=18, max_value=100, value=30)
             intended_balcon_amount = st.number_input("Monto Saldo Previsto", min_value=0.0, max_value=1000000.0, value=10000.0)
             velocity_6h = st.number_input("Velocidad Transacción En 6h", min_value=0.0, max_value=10000.0, value=10.0)
             velocity_24h = st.number_input("Velocidad Transacción En 24h", min_value=0.0, max_value=10000.0, value=20.0)
-            bank_branch_count_8w = st.number_input("Sucursales Bancarias En 8 Semanas", min_value=0, max_value=20, value=5)
+            bank_branch_count_8w = st.number_input("Sucursales Bancarias En 8 Semanas", min_value=0, max_value=50, value=5)
             date_of_birth_distinct_emails_4w = st.number_input("Emails Distintos en 4 Semanas", min_value=0, max_value=50, value=5)
 
         # Segunda columna con las siguientes 10 variables
@@ -121,14 +121,14 @@ elif menu == "Informaciòn sobre Fraudes Financieros":
 
     ### 🔍 Casos de Éxito Demostrados:
     - **PayPal: Reducción Drástica de Fraudes con Modelos Híbridos:*** 
-    - **Problema:** PayPal procesaba millones de transacciones diarias y usaba reglas tradicionales, que generaban muchos falsos positivos y no detectaban fraudes sofisticados. 
-    - **Solución:** Implementaron un sistema híbrido que combina Redes Neuronales y Modelos Basados en Árboles (XGBoost, Random Forest) para detectar anomalías en las transacciones.
-    - **Resultados:** Reducción del 50% en fraudes no detectados,Disminución del 30% en falsos positivos, mejorando la experiencia del usuario e Implementación de detección en tiempo real para evitar transacciones fraudulentas antes de que se completen.
+    -   Problema: PayPal procesaba millones de transacciones diarias y usaba reglas tradicionales, que generaban muchos falsos positivos y no detectaban fraudes sofisticados. 
+    -   Solución: Implementaron un sistema híbrido que combina Redes Neuronales y Modelos Basados en Árboles (XGBoost, Random Forest) para detectar anomalías en las transacciones.
+    -   Resultados: Reducción del 50% en fraudes no detectados,Disminución del 30% en falsos positivos, mejorando la experiencia del usuario e Implementación de detección en tiempo real para evitar transacciones fraudulentas antes de que se completen.
     
     - **Mastercard y su Sistema Decision Intelligence:**
-    - **Problema:** La empresa necesitaba mejorar la seguridad de pagos sin afectar la experiencia del cliente con bloqueos injustificados.
-    - **Solución:** Crearon "Decision Intelligence", un sistema basado en ML que analiza comportamiento de clientes en tiempo real, considerando variables como ubicación, historial de compras y dispositivos utilizados.
-    - **Resultados:** Reducción del 50% en transacciones fraudulentas aprobadas, Optimización del sistema de aprobación de pagos sin interrumpir compras legítimas
+    -   Problema: La empresa necesitaba mejorar la seguridad de pagos sin afectar la experiencia del cliente con bloqueos injustificados.
+    -   Solución: Crearon "Decision Intelligence", un sistema basado en ML que analiza comportamiento de clientes en tiempo real, considerando variables como ubicación, historial de compras y dispositivos utilizados.
+    -   Resultados: Reducción del 50% en transacciones fraudulentas aprobadas, Optimización del sistema de aprobación de pagos sin interrumpir compras legítimas
 
     ### 📈 Distribución Global de Fraudes por Región
     Nuestro análisis global muestra cómo el fraude afecta a diferentes regiones, subrayando la necesidad urgente de soluciones avanzadas como la nuestra:
